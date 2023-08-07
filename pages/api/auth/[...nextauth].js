@@ -2,8 +2,8 @@ import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import GitHubProvider from "next-auth/providers/github";
 import CredentialsProvider from "next-auth/providers/credentials";
-import mongodbConnect from "../../../../database/dbConn";
-import Users from "../../../../model/auth";
+import mongodbConnect from "../../../database/dbConn";
+import Users from "../../../model/auth";
 import { compare } from "bcryptjs";
 
 export default NextAuth({
