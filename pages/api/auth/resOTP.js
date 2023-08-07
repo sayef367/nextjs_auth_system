@@ -23,7 +23,6 @@ export default async function handler(req, res) {
       if(err) return res.status(404).json({ error: 'Registration Error!' });
     });
     await userData.save();
-    console.log(userData);
 
     res.status(200).json({ message: 'Registration Successful.' });
 
