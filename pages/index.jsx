@@ -1,10 +1,11 @@
 import { getSession } from "next-auth/react";
 
-export default function Index() {
+export default function Index({ user }) {
   return (
-    <div className="text-center">
-      <h1 className="text-center">Hello Sayeful Islam</h1>
-      <h4>sayeful@gmail.com</h4>
+    <div className="text-center mt-5">
+      <h1 className="text-center mb-5">Welcome to Auth System</h1>
+      <h4>{user.name}</h4>
+      <p>{user.email}</p>
     </div>
   );
 };
@@ -19,9 +20,14 @@ export async function getServerSideProps({req}) {
       }
     };
   };
+  const data = {
+    name: session.user.name,
+    email: session.user.email
+  }
   return {
     props: {
-      session
+      session,
+      user: data
     }
   };
 };

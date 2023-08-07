@@ -47,11 +47,11 @@ export default function SignUp() {
   };
   //Google SignUp
   async function handelGoogleSignin() {
-    signIn('google', { callbackUrl: "/profile" });
+    signIn('google', { callbackUrl: "/" });
   };
   //Github SignUp
   async function handelGithubSignin() {
-    signIn('github', { callbackUrl: "/profile" });
+    signIn('github', { callbackUrl: "/" });
   };
 
   return (

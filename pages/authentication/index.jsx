@@ -24,7 +24,7 @@ export default function AuthPage() {
         redirect: false,
         email: values.email,
         password: values.password,
-        callbackUrl: "/profile"
+        callbackUrl: "/"
       });
       if(status.error) alert(status.error); //show all error
       if(status.ok) router.push(status.url); //if true then login
@@ -33,11 +33,11 @@ export default function AuthPage() {
   };
   //Google Login
   async function handelGoogleSignin() {
-    signIn('google', { callbackUrl: "/profile" });
+    signIn('google', { callbackUrl: "/" });
   };
   //Github Login
   async function handelGithubSignin() {
-    signIn('github', { callbackUrl: "/profile" });
+    signIn('github', { callbackUrl: "/" });
   };
 
   return (
@@ -70,9 +70,6 @@ export default function AuthPage() {
                 <label className="form-check-label fw-lighter ms-1">
                   {`${show ? "Hide password" : "Show password"}`}
                 </label>
-              </div>
-              <div className="col-6 text-end fw-light">
-                <Link href='/authentication/forgot' className="text-dark">Forgot password</Link>
               </div>
             </div>
             <div className="d-grid gap-2 mt-4">

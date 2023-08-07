@@ -4,6 +4,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import { useEffect } from 'react';
 import { SessionProvider } from "next-auth/react";
 import Navbar from '@/components/navbar';
+import Footer from '@/components/footer';
 
 export default function App({ Component, pageProps }) {
   
@@ -15,6 +16,7 @@ export default function App({ Component, pageProps }) {
     <SessionProvider session={pageProps.session}>
       <Navbar />
       <Component {...pageProps} />
+      <Footer />
     </SessionProvider>
   );
 };
